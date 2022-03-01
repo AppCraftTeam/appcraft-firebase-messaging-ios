@@ -28,20 +28,20 @@ public struct ACFirebaseMessagingHandlers {
         UNUserNotificationCenter.current().delegate = self.current
     }
     
-    public mutating func pushHandler(_ handler: ACFirebaseMessagingHandlerProtocol) {
-        self.removeHandler(handler)
+    public mutating func push(_ handler: ACFirebaseMessagingHandlerProtocol) {
+        self.remove(handler)
         self.handlers += [handler]
         
         self.subscribeCurrent()
         self.appLaunchNotificationDidSet()
     }
 
-    public mutating func popHandler() {
+    public mutating func pop() {
         guard let handler = self.handlers.last else { return }
-        self.removeHandler(handler)
+        self.remove(handler)
     }
     
-    public mutating func removeHandler(_ handler: ACFirebaseMessagingHandlerProtocol) {
+    public mutating func remove(_ handler: ACFirebaseMessagingHandlerProtocol) {
         self.handlers.removeAll(where: { $0 == handler })
         self.subscribeCurrent()
     }
