@@ -1,5 +1,5 @@
 //
-//  ACFirebaseMessagingService.swift
+//  ACFirebaseMessagingManager.swift
 //  
 //
 //  Created by Дмитрий Поляков on 01.03.2022.
@@ -9,7 +9,7 @@ import Foundation
 import FirebaseMessaging
 import UIKit
 
-open class ACFirebaseMessagingService: NSObject, MessagingDelegate {
+open class ACFirebaseMessagingManager: NSObject, MessagingDelegate {
     
     // MARK: - Props
     public private(set) var fcmToken: String?
