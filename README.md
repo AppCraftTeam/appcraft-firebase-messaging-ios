@@ -1,1 +1,3 @@
-# appcraft-firebase-messaging-ios
+# ACFirebaseMessaging
+
+A description of this package.
